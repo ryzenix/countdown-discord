@@ -21,7 +21,7 @@ client.on("ready", async () => {
         channel.setName(`${item.title}: ${formattedDuration}`).then(newChannel => console.log(`Schedule ${item.title} has been applied to channel: ${newChannel.name}`))
     }
 
-    schedule.scheduleJob('*/5 * * * *', async () => {
+    schedule.scheduleJob('*/15 * * * *', async () => {
         if (!list.length) return;
         for (const item of list) {
             const channel = client.channels.cache.get(item.channelId);
